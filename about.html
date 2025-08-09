@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - DigitalPro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#10B981', 
+                        accent: '#F59E0B',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-inter bg-white text-gray-800">
+       <!-- Navigation -->
+    <nav class="fixed w-full top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="text-2xl font-bold text-primary">DigitalPro</a>
+                </div>
+                
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <div class="relative group">
+                            <button class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition-colors duration-200">
+                                Home
+                            </button>
+                            <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-10">
+                                <div class="py-1">
+                                    <a href="index.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Home 1</a>
+                                    <a href="index2.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Home 2</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <a href="about.html" class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition-colors duration-200">About</a>
+                        <a href="services.html" class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition-colors duration-200">Services</a>
+                        <a href="case-studies.html" class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition-colors duration-200">Case Studies</a>
+                        <a href="pricing.html" class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition-colors duration-200">Pricing</a>
+                        
+                        <div class="relative group">
+                            <button class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition-colors duration-200">
+                                Dashboard
+                            </button>
+                            <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-10">
+                                <div class="py-1">
+                                    <a href="admin-dashboard.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Admin</a>
+                                    <a href="user-dashboard.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">User</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <a href="contact.html" class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition-colors duration-200">Contact</a>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-4">
+                    <button id="rtlToggle" class="p-2 rounded-lg bg-gray-100 hover:bg-gray-200 transition-colors duration-200">
+                        RTL
+                    </button>
+                    <a href="login.html" class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200">Login</a>
+                </div>
+                
+                <div class="md:hidden">
+                    <button id="mobileMenuToggle" class="text-gray-700 hover:text-primary focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="mobileMenu" class="md:hidden hidden h-[100vh] bg-white border-t border-gray-100">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary">Home 1</a>
+                <a href="index2.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary">Home 2</a>
+                <a href="about.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary">About</a>
+                <a href="services.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary">Services</a>
+                <a href="case-studies.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary">Case Studies</a>
+                <a href="pricing.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary">Pricing</a>
+                <a href="admin-dashboard.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary">Admin Dashboard</a>
+                <a href="user-dashboard.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary">User Dashboard</a>
+                <a href="contact.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary">Contact</a>
+                <a href="login.html" class="block px-3 py-2 text-base font-medium bg-primary text-white rounded-lg mx-3 text-center">Login</a>
+                <button id="rtlToggle" class="p-2 rounded-lg bg-gray-100 w-full hover:bg-gray-200 transition-colors duration-200">
+                        RTL
+                    </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="pt-24 pb-12 bg-gradient-to-r from-primary to-secondary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-5xl font-bold text-white mb-4">About DigitalPro</h1>
+            <p class="text-xl text-blue-100 max-w-2xl mx-auto">Empowering businesses to thrive in the digital landscape</p>
+        </div>
+    </section>
+
+    <!-- About Content -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="fade-in-up">
+                    <h2 class="text-4xl font-bold text-gray-900 mb-6">Our Story</h2>
+                    <p class="text-lg text-gray-600 mb-6">
+                        Founded in 2019, DigitalPro emerged from a simple vision: to help businesses navigate the ever-evolving digital landscape with confidence and success. Our journey began when our founders recognized the growing gap between traditional marketing approaches and the digital-first world we live in today.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-6">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, voluptatum. Ipsum, quae. Quidem, voluptatum dolorem architecto neque atque, eos officiis ut, ex cupiditate velit eaque.
+                    </p>
+                    <p class="text-lg text-gray-600">
+                        Today, we're proud to serve over 500 clients worldwide, helping them achieve remarkable growth through innovative digital marketing strategies and cutting-edge SEO techniques.
+                    </p>
+                </div>
+                <div class="fade-in-up delay-200">
+                    <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Our Team" class="rounded-2xl shadow-2xl w-full">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="text-center hover-card bg-white p-12 rounded-2xl shadow-lg">
+                    <div class="bg-primary/10 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-3xl font-bold text-gray-900 mb-6">Our Mission</h3>
+                    <p class="text-gray-600 text-lg">
+                        To empower businesses of all sizes with innovative digital marketing solutions that drive sustainable growth, enhance brand visibility, and create meaningful connections with their target audiences in the digital age.
+                    </p>
+                </div>
+                
+                <div class="text-center hover-card bg-white p-12 rounded-2xl shadow-lg">
+                    <div class="bg-secondary/10 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-3xl font-bold text-gray-900 mb-6">Our Vision</h3>
+                    <p class="text-gray-600 text-lg">
+                        To be the world's most trusted digital marketing partner, setting industry standards for innovation, results, and client satisfaction while helping shape the future of digital business transformation.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Meet Our Expert Team</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, voluptatum.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="text-center group hover-card">
+                    <div class="relative mb-6">
+                        <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=300" alt="CEO" class="w-48 h-48 rounded-full mx-auto object-cover">
+                        <div class="absolute inset-0 bg-primary/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Alex Thompson</h3>
+                    <p class="text-primary font-medium mb-2">CEO & Founder</p>
+                    <p class="text-gray-600 text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+                
+                <div class="text-center group hover-card">
+                    <div class="relative mb-6">
+                        <img src="https://images.pexels.com/photos/3771118/pexels-photo-3771118.jpeg?auto=compress&cs=tinysrgb&w=300" alt="CTO" class="w-48 h-48 rounded-full mx-auto object-cover">
+                        <div class="absolute inset-0 bg-secondary/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Sarah Mitchell</h3>
+                    <p class="text-secondary font-medium mb-2">Head of Strategy</p>
+                    <p class="text-gray-600 text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+                
+                <div class="text-center group hover-card">
+                    <div class="relative mb-6">
+                        <img src="https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Lead Developer" class="w-48 h-48 rounded-full mx-auto object-cover">
+                        <div class="absolute inset-0 bg-accent/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Marcus Chen</h3>
+                    <p class="text-accent font-medium mb-2">SEO Director</p>
+                    <p class="text-gray-600 text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+                
+                <div class="text-center group hover-card">
+                    <div class="relative mb-6">
+                        <img src="https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Marketing Head" class="w-48 h-48 rounded-full mx-auto object-cover">
+                        <div class="absolute inset-0 bg-purple-500/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Emma Rodriguez</h3>
+                    <p class="text-purple-600 font-medium mb-2">Creative Director</p>
+                    <p class="text-gray-600 text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="py-20 bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Our Core Values</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, voluptatum.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center group">
+                    <div class="bg-primary/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary/30 transition-colors duration-200">
+                        <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4">Excellence</h3>
+                    <p class="text-gray-300">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, voluptatum.</p>
+                </div>
+                
+                <div class="text-center group">
+                    <div class="bg-secondary/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-secondary/30 transition-colors duration-200">
+                        <svg class="w-8 h-8 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4">Collaboration</h3>
+                    <p class="text-gray-300">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, voluptatum.</p>
+                </div>
+                
+                <div class="text-center group">
+                    <div class="bg-accent/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-accent/30 transition-colors duration-200">
+                        <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4">Innovation</h3>
+                    <p class="text-gray-300">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, voluptatum.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-primary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold text-white mb-6">Ready to Work with Us?</h2>
+            <p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, voluptatum.</p>
+            <a href="contact.html" class="bg-white text-primary px-8 py-4 rounded-lg hover:bg-gray-100 transition-all duration-200 font-semibold inline-block hover-scale">
+                Get In Touch
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold text-primary mb-4">DigitalPro</h3>
+                    <p class="text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="services.html" class="hover:text-white transition-colors">SEO</a></li>
+                        <li><a href="services.html" class="hover:text-white transition-colors">Social Media</a></li>
+                        <li><a href="services.html" class="hover:text-white transition-colors">PPC</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="about.html" class="hover:text-white transition-colors">About</a></li>
+                        <li><a href="case-studies.html" class="hover:text-white transition-colors">Case Studies</a></li>
+                        <li><a href="pricing.html" class="hover:text-white transition-colors">Pricing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>contact@digitalpro.com</li>
+                        <li>+1 (555) 123-4567</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>Random Name — All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

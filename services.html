@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - DigitalPro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#10B981', 
+                        accent: '#F59E0B',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-inter bg-white text-gray-800">
+       <!-- Navigation -->
+    <nav class="fixed w-full top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="text-2xl font-bold text-primary">DigitalPro</a>
+                </div>
+                
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <div class="relative group">
+                            <button class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition-colors duration-200">
+                                Home
+                            </button>
+                            <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-10">
+                                <div class="py-1">
+                                    <a href="index.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Home 1</a>
+                                    <a href="index2.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Home 2</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <a href="about.html" class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition-colors duration-200">About</a>
+                        <a href="services.html" class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition-colors duration-200">Services</a>
+                        <a href="case-studies.html" class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition-colors duration-200">Case Studies</a>
+                        <a href="pricing.html" class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition-colors duration-200">Pricing</a>
+                        
+                        <div class="relative group">
+                            <button class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition-colors duration-200">
+                                Dashboard
+                            </button>
+                            <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-10">
+                                <div class="py-1">
+                                    <a href="admin-dashboard.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Admin</a>
+                                    <a href="user-dashboard.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">User</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <a href="contact.html" class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition-colors duration-200">Contact</a>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-4">
+                    <button id="rtlToggle" class="p-2 rounded-lg bg-gray-100 hover:bg-gray-200 transition-colors duration-200">
+                        RTL
+                    </button>
+                    <a href="login.html" class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200">Login</a>
+                </div>
+                
+                <div class="md:hidden">
+                    <button id="mobileMenuToggle" class="text-gray-700 hover:text-primary focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="mobileMenu" class="md:hidden hidden h-[100vh] bg-white border-t border-gray-100">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary">Home 1</a>
+                <a href="index2.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary">Home 2</a>
+                <a href="about.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary">About</a>
+                <a href="services.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary">Services</a>
+                <a href="case-studies.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary">Case Studies</a>
+                <a href="pricing.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary">Pricing</a>
+                <a href="admin-dashboard.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary">Admin Dashboard</a>
+                <a href="user-dashboard.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary">User Dashboard</a>
+                <a href="contact.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary">Contact</a>
+                <a href="login.html" class="block px-3 py-2 text-base font-medium bg-primary text-white rounded-lg mx-3 text-center">Login</a>
+                <button id="rtlToggle" class="p-2 rounded-lg bg-gray-100 w-full hover:bg-gray-200 transition-colors duration-200">
+                        RTL
+                    </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="pt-24 pb-12 bg-gradient-to-r from-primary to-secondary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-5xl font-bold text-white mb-4">Our Services</h1>
+            <p class="text-xl text-blue-100 max-w-2xl mx-auto">Comprehensive digital marketing solutions to grow your business</p>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- SEO Service -->
+                <div class="group bg-white rounded-2xl shadow-lg p-8 hover-card border">
+                    <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors duration-200">
+                        <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">SEO Optimization</h3>
+                    <p class="text-gray-600 mb-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, voluptatum. Ipsum, quae. Quidem, voluptatum dolorem architecto.</p>
+                    <ul class="space-y-2 mb-8">
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-secondary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-600">Keyword Research & Analysis</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-secondary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-600">On-page Optimization</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-secondary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-600">Link Building Strategy</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-secondary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-600">Performance Tracking</span>
+                        </li>
+                    </ul>
+                    <a href="contact.html" class="block text-center bg-primary text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors duration-200 font-semibold">
+                        Learn More
+                    </a>
+                </div>
+
+                <!-- Social Media Marketing -->
+                <div class="group bg-white rounded-2xl shadow-lg p-8 hover-card border">
+                    <div class="bg-secondary/10 w-16 h-16 rounded-full flex items-center justify-center mb-6 group-hover:bg-secondary/20 transition-colors duration-200">
+                        <svg class="w-8 h-8 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Social Media Marketing</h3>
+                    <p class="text-gray-600 mb-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, voluptatum. Ipsum, quae. Quidem, voluptatum dolorem architecto.</p>
+                    <ul class="space-y-2 mb-8">
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-secondary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-600">Strategy Development</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-secondary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-600">Content Creation</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-secondary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-600">Community Management</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-secondary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-600">Analytics & Reporting</span>
+                        </li>
+                    </ul>
+                    <a href="contact.html" class="block text-center bg-secondary text-white py-3 px-6 rounded-lg hover:bg-green-600 transition-colors duration-200 font-semibold">
+                        Learn More
+                    </a>
+                </div>
+
+                <!-- PPC Advertising -->
+                <div class="group bg-white rounded-2xl shadow-lg p-8 hover-card border">
+                    <div class="bg-accent/10 w-16 h-16 rounded-full flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors duration-200">
+                        <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">PPC Advertising</h3>
+                    <p class="text-gray-600 mb-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, voluptatum. Ipsum, quae. Quidem, voluptatum dolorem architecto.</p>
+                    <ul class="space-y-2 mb-8">
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-secondary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-600">Campaign Setup</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-secondary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-600">Ad Copy Writing</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-secondary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-600">Bid Management</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-secondary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-600">ROI Optimization</span>
+                        </li>
+                    </ul>
+                    <a href="contact.html" class="block text-center bg-accent text-white py-3 px-6 rounded-lg hover:bg-yellow-600 transition-colors duration-200 font-semibold">
+                        Learn More
+                    </a>
+                </div>
+
+                <!-- Content Marketing -->
+                <div class="group bg-white rounded-2xl shadow-lg p-8 hover-card border">
+                    <div class="bg-purple-500/10 w-16 h-16 rounded-full flex items-center justify-center mb-6 group-hover:bg-purple-500/20 transition-colors duration-200">
+                        <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Content Marketing</h3>
+                    <p class="text-gray-600 mb-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, voluptatum. Ipsum, quae. Quidem, voluptatum dolorem architecto.</p>
+                    <ul class="space-y-2 mb-8">
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-secondary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-600">Content Strategy</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-secondary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-600">Blog Writing</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-secondary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-600">Video Production</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-secondary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-600">Distribution Strategy</span>
+                        </li>
+                    </ul>
+                    <a href="contact.html" class="block text-center bg-purple-600 text-white py-3 px-6 rounded-lg hover:bg-purple-700 transition-colors duration-200 font-semibold">
+                        Learn More
+                    </a>
+                </div>
+
+                <!-- Web Design & Development -->
+                <div class="group bg-white rounded-2xl shadow-lg p-8 hover-card border">
+                    <div class="bg-pink-500/10 w-16 h-16 rounded-full flex items-center justify-center mb-6 group-hover:bg-pink-500/20 transition-colors duration-200">
+                        <svg class="w-8 h-8 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Web Design & Development</h3>
+                    <p class="text-gray-600 mb-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, voluptatum. Ipsum, quae. Quidem, voluptatum dolorem architecto.</p>
+                    <ul class="space-y-2 mb-8">
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-secondary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-600">Responsive Design</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-secondary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-600">Custom Development</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-secondary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-600">E-commerce Solutions</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-secondary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-600">Performance Optimization</span>
+                        </li>
+                    </ul>
+                    <a href="contact.html" class="block text-center bg-pink-600 text-white py-3 px-6 rounded-lg hover:bg-pink-700 transition-colors duration-200 font-semibold">
+                        Learn More
+                    </a>
+                </div>
+
+                <!-- Digital Strategy -->
+                <div class="group bg-white rounded-2xl shadow-lg p-8 hover-card border">
+                    <div class="bg-indigo-500/10 w-16 h-16 rounded-full flex items-center justify-center mb-6 group-hover:bg-indigo-500/20 transition-colors duration-200">
+                        <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Digital Strategy</h3>
+                    <p class="text-gray-600 mb-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, voluptatum. Ipsum, quae. Quidem, voluptatum dolorem architecto.</p>
+                    <ul class="space-y-2 mb-8">
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-secondary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-600">Market Analysis</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-secondary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-600">Competitor Research</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-secondary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-600">Growth Planning</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-secondary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-600">KPI Tracking</span>
+                        </li>
+                    </ul>
+                    <a href="contact.html" class="block text-center bg-indigo-600 text-white py-3 px-6 rounded-lg hover:bg-indigo-700 transition-colors duration-200 font-semibold">
+                        Learn More
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Our Process</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, voluptatum.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold">
+                        1
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Discovery</h3>
+                    <p class="text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-secondary text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold">
+                        2
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Strategy</h3>
+                    <p class="text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-accent text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold">
+                        3
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Execution</h3>
+                    <p class="text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-purple-600 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold">
+                        4
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Optimization</h3>
+                    <p class="text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-primary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold text-white mb-6">Ready to Get Started?</h2>
+            <p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, voluptatum.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="contact.html" class="bg-white text-primary px-8 py-4 rounded-lg hover:bg-gray-100 transition-all duration-200 font-semibold hover-scale">
+                    Get Free Consultation
+                </a>
+                <a href="pricing.html" class="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-primary transition-all duration-200 font-semibold hover-scale">
+                    View Pricing
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold text-primary mb-4">DigitalPro</h3>
+                    <p class="text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="services.html" class="hover:text-white transition-colors">SEO</a></li>
+                        <li><a href="services.html" class="hover:text-white transition-colors">Social Media</a></li>
+                        <li><a href="services.html" class="hover:text-white transition-colors">PPC</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="about.html" class="hover:text-white transition-colors">About</a></li>
+                        <li><a href="case-studies.html" class="hover:text-white transition-colors">Case Studies</a></li>
+                        <li><a href="pricing.html" class="hover:text-white transition-colors">Pricing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>contact@digitalpro.com</li>
+                        <li>+1 (555) 123-4567</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>Random Name — All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

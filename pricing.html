@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing - DigitalPro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#10B981', 
+                        accent: '#F59E0B',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-inter bg-white text-gray-800">
+       <!-- Navigation -->
+    <nav class="fixed w-full top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="text-2xl font-bold text-primary">DigitalPro</a>
+                </div>
+                
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <div class="relative group">
+                            <button class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition-colors duration-200">
+                                Home
+                            </button>
+                            <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-10">
+                                <div class="py-1">
+                                    <a href="index.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Home 1</a>
+                                    <a href="index2.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Home 2</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <a href="about.html" class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition-colors duration-200">About</a>
+                        <a href="services.html" class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition-colors duration-200">Services</a>
+                        <a href="case-studies.html" class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition-colors duration-200">Case Studies</a>
+                        <a href="pricing.html" class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition-colors duration-200">Pricing</a>
+                        
+                        <div class="relative group">
+                            <button class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition-colors duration-200">
+                                Dashboard
+                            </button>
+                            <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-10">
+                                <div class="py-1">
+                                    <a href="admin-dashboard.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Admin</a>
+                                    <a href="user-dashboard.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">User</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <a href="contact.html" class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition-colors duration-200">Contact</a>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-4">
+                    <button id="rtlToggle" class="p-2 rounded-lg bg-gray-100 hover:bg-gray-200 transition-colors duration-200">
+                        RTL
+                    </button>
+                    <a href="login.html" class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200">Login</a>
+                </div>
+                
+                <div class="md:hidden">
+                    <button id="mobileMenuToggle" class="text-gray-700 hover:text-primary focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="mobileMenu" class="md:hidden hidden h-[100vh] bg-white border-t border-gray-100">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary">Home 1</a>
+                <a href="index2.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary">Home 2</a>
+                <a href="about.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary">About</a>
+                <a href="services.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary">Services</a>
+                <a href="case-studies.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary">Case Studies</a>
+                <a href="pricing.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary">Pricing</a>
+                <a href="admin-dashboard.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary">Admin Dashboard</a>
+                <a href="user-dashboard.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary">User Dashboard</a>
+                <a href="contact.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary">Contact</a>
+                <a href="login.html" class="block px-3 py-2 text-base font-medium bg-primary text-white rounded-lg mx-3 text-center">Login</a>
+                <button id="rtlToggle" class="p-2 rounded-lg bg-gray-100 w-full hover:bg-gray-200 transition-colors duration-200">
+                        RTL
+                    </button>
+            </div>
+        </div>
+    </nav>
+    <!-- Page Header -->
+    <section class="pt-24 pb-12 bg-gradient-to-r from-primary to-secondary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-5xl font-bold text-white mb-4">Pricing Plans</h1>
+            <p class="text-xl text-blue-100 max-w-2xl mx-auto">Choose the perfect plan for your business needs</p>
+        </div>
+    </section>
+
+    <!-- Pricing Toggle -->
+    <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-center items-center mb-12">
+                <span class="text-gray-600 mr-4">Monthly</span>
+                <button id="pricingToggle" class="relative inline-flex h-6 w-11 items-center rounded-full bg-gray-200 transition-colors focus:outline-none">
+                    <span id="toggleDot" class="inline-block h-4 w-4 transform rounded-full bg-white transition-transform translate-x-1"></span>
+                </button>
+                <span class="text-gray-600 ml-4">Yearly</span>
+                <span class="bg-secondary text-white text-xs px-2 py-1 rounded-full ml-2">Save 20%</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Plans -->
+    <section class="pb-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Basic Plan -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 border hover-card">
+                    <div class="text-center">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Starter</h3>
+                        <div class="mb-6">
+                            <span class="text-5xl font-bold text-primary" id="starterPrice">$599</span>
+                            <span class="text-gray-600 ml-2" id="starterPeriod">/month</span>
+                        </div>
+                        <p class="text-gray-600 mb-8">Perfect for small businesses starting their digital journey</p>
+                        
+                        <ul class="space-y-4 mb-8 text-left">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-secondary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-gray-600">Basic SEO Optimization</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-secondary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-gray-600">Social Media Management (2 platforms)</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-secondary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-gray-600">Monthly Analytics Report</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-secondary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-gray-600">Email Support</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-secondary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-gray-600">Basic Content Strategy</span>
+                            </li>
+                        </ul>
+                        
+                        <a href="contact.html" class="block w-full bg-primary text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors duration-200 font-semibold text-center hover-scale">
+                            Get Started
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Professional Plan -->
+                <div class="bg-white rounded-2xl shadow-xl p-8 border-2 border-primary hover-card relative">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <span class="bg-primary text-white px-4 py-2 rounded-full text-sm font-semibold">Most Popular</span>
+                    </div>
+                    <div class="text-center">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Professional</h3>
+                        <div class="mb-6">
+                            <span class="text-5xl font-bold text-primary" id="professionalPrice">$1,199</span>
+                            <span class="text-gray-600 ml-2" id="professionalPeriod">/month</span>
+                        </div>
+                        <p class="text-gray-600 mb-8">Comprehensive solution for growing businesses</p>
+                        
+                        <ul class="space-y-4 mb-8 text-left">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-secondary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-gray-600">Advanced SEO + Content Marketing</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-secondary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-gray-600">Social Media Management (4 platforms)</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-secondary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-gray-600">PPC Campaign Management</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-secondary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-gray-600">Bi-weekly Analytics Reports</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-secondary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-gray-600">Priority Support</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-secondary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-gray-600">Conversion Rate Optimization</span>
+                            </li>
+                        </ul>
+                        
+                        <a href="contact.html" class="block w-full bg-primary text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors duration-200 font-semibold text-center hover-scale">
+                            Get Started
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Enterprise Plan -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 border hover-card">
+                    <div class="text-center">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Enterprise</h3>
+                        <div class="mb-6">
+                            <span class="text-5xl font-bold text-primary" id="enterprisePrice">$2,499</span>
+                            <span class="text-gray-600 ml-2" id="enterprisePeriod">/month</span>
+                        </div>
+                        <p class="text-gray-600 mb-8">Complete digital transformation for large businesses</p>
+                        
+                        <ul class="space-y-4 mb-8 text-left">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-secondary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-gray-600">Full-Service Digital Strategy</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-secondary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-gray-600">Unlimited Social Media Platforms</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-secondary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-gray-600">Advanced PPC + Retargeting</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-secondary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-gray-600">Weekly Reports + Real-time Dashboard</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-secondary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-gray-600">Dedicated Account Manager</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-secondary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-gray-600">Custom Development & Integrations</span>
+                            </li>
+                        </ul>
+                        
+                        <a href="contact.html" class="block w-full bg-primary text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors duration-200 font-semibold text-center hover-scale">
+                            Contact Sales
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
+                <p class="text-lg text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+            
+            <div class="space-y-4">
+                <div class="bg-white rounded-lg shadow-sm">
+                    <button class="w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none" onclick="toggleFAQ(this)">
+                        <span class="font-semibold text-gray-900">What's included in each plan?</span>
+                        <svg class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="hidden px-6 pb-4">
+                        <p class="text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, voluptatum. Ipsum, quae. Quidem, voluptatum dolorem architecto neque atque, eos officiis ut, ex cupiditate velit eaque.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-sm">
+                    <button class="w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none" onclick="toggleFAQ(this)">
+                        <span class="font-semibold text-gray-900">Can I change plans later?</span>
+                        <svg class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="hidden px-6 pb-4">
+                        <p class="text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, voluptatum. Ipsum, quae. Quidem, voluptatum dolorem architecto neque atque, eos officiis ut.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-sm">
+                    <button class="w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none" onclick="toggleFAQ(this)">
+                        <span class="font-semibold text-gray-900">Do you offer custom solutions?</span>
+                        <svg class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="hidden px-6 pb-4">
+                        <p class="text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, voluptatum. Ipsum, quae. Quidem, voluptatum dolorem architecto.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-sm">
+                    <button class="w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none" onclick="toggleFAQ(this)">
+                        <span class="font-semibold text-gray-900">What's your refund policy?</span>
+                        <svg class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="hidden px-6 pb-4">
+                        <p class="text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, voluptatum. Ipsum, quae. Quidem, voluptatum.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-primary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold text-white mb-6">Ready to Get Started?</h2>
+            <p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, voluptatum.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="contact.html" class="bg-white text-primary px-8 py-4 rounded-lg hover:bg-gray-100 transition-all duration-200 font-semibold hover-scale">
+                    Get Free Consultation
+                </a>
+                <a href="services.html" class="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-primary transition-all duration-200 font-semibold hover-scale">
+                    View Services
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold text-primary mb-4">DigitalPro</h3>
+                    <p class="text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="services.html" class="hover:text-white transition-colors">SEO</a></li>
+                        <li><a href="services.html" class="hover:text-white transition-colors">Social Media</a></li>
+                        <li><a href="services.html" class="hover:text-white transition-colors">PPC</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="about.html" class="hover:text-white transition-colors">About</a></li>
+                        <li><a href="case-studies.html" class="hover:text-white transition-colors">Case Studies</a></li>
+                        <li><a href="pricing.html" class="hover:text-white transition-colors">Pricing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>contact@digitalpro.com</li>
+                        <li>+1 (555) 123-4567</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>Random Name — All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Pricing toggle functionality
+        document.getElementById('pricingToggle').addEventListener('click', function() {
+            const toggle = this;
+            const dot = document.getElementById('toggleDot');
+            const isYearly = toggle.classList.contains('bg-primary');
+            
+            if (isYearly) {
+                toggle.classList.remove('bg-primary');
+                toggle.classList.add('bg-gray-200');
+                dot.classList.remove('translate-x-6');
+                dot.classList.add('translate-x-1');
+                
+                // Switch to monthly prices
+                document.getElementById('starterPrice').textContent = '$599';
+                document.getElementById('starterPeriod').textContent = '/month';
+                document.getElementById('professionalPrice').textContent = '$1,199';
+                document.getElementById('professionalPeriod').textContent = '/month';
+                document.getElementById('enterprisePrice').textContent = '$2,499';
+                document.getElementById('enterprisePeriod').textContent = '/month';
+            } else {
+                toggle.classList.add('bg-primary');
+                toggle.classList.remove('bg-gray-200');
+                dot.classList.add('translate-x-6');
+                dot.classList.remove('translate-x-1');
+                
+                // Switch to yearly prices (20% discount)
+                document.getElementById('starterPrice').textContent = '$5,750';
+                document.getElementById('starterPeriod').textContent = '/year';
+                document.getElementById('professionalPrice').textContent = '$11,510';
+                document.getElementById('professionalPeriod').textContent = '/year';
+                document.getElementById('enterprisePrice').textContent = '$23,990';
+                document.getElementById('enterprisePeriod').textContent = '/year';
+            }
+        });
+        
+        // FAQ toggle functionality
+        function toggleFAQ(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('svg');
+            
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.classList.add('rotate-180');
+            } else {
+                content.classList.add('hidden');
+                icon.classList.remove('rotate-180');
+            }
+        }
+    </script>
+</body>
+</html>
