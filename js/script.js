@@ -53,30 +53,36 @@ function initMobileMenu() {
 
 // RTL Toggle Functionality
 function initRTLToggle() {
-    const rtlToggle = document.getElementById('rtlToggle');
-    
-    if (rtlToggle) {
-        rtlToggle.addEventListener('click', function() {
-            const html = document.documentElement;
-            const currentDir = html.getAttribute('dir');
-            
-            if (currentDir === 'rtl') {
-                html.setAttribute('dir', 'ltr');
-                rtlToggle.textContent = 'RTL';
-                localStorage.setItem('textDirection', 'ltr');
-            } else {
-                html.setAttribute('dir', 'rtl');
-                rtlToggle.textContent = 'LTR';
-                localStorage.setItem('textDirection', 'rtl');
-            }
-        });
-        
-        // Load saved direction preference
-        const savedDirection = localStorage.getItem('textDirection');
-        if (savedDirection) {
-            document.documentElement.setAttribute('dir', savedDirection);
-            rtlToggle.textContent = savedDirection === 'rtl' ? 'LTR' : 'RTL';
+    const rtlToggles = [
+        document.getElementById('rtlToggleDesktop'),
+        document.getElementById('rtlToggleMobile')
+    ];
+
+    rtlToggles.forEach(rtlToggle => {
+        if (rtlToggle) {
+            rtlToggle.addEventListener('click', function() {
+                const html = document.documentElement;
+                const currentDir = html.getAttribute('dir');
+                if (currentDir === 'rtl') {
+                    html.setAttribute('dir', 'ltr');
+                    rtlToggles.forEach(btn => { if (btn) btn.textContent = 'RTL'; });
+                    localStorage.setItem('textDirection', 'ltr');
+                } else {
+                    html.setAttribute('dir', 'rtl');
+                    rtlToggles.forEach(btn => { if (btn) btn.textContent = 'LTR'; });
+                    localStorage.setItem('textDirection', 'rtl');
+                }
+            });
         }
+    });
+
+    // Load saved direction preference
+    const savedDirection = localStorage.getItem('textDirection');
+    if (savedDirection) {
+        document.documentElement.setAttribute('dir', savedDirection);
+        rtlToggles.forEach(btn => {
+            if (btn) btn.textContent = savedDirection === 'rtl' ? 'LTR' : 'RTL';
+        });
     }
 }
 
