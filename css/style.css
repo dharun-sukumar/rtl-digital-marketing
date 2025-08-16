@@ -20,7 +20,7 @@ body {
 }
 
 [dir="rtl"] .flex {
-    flex-direction: row-reverse;
+    /* flex-direction: row-reverse; */
 }
 
 [dir="rtl"] .space-x-4 > * {

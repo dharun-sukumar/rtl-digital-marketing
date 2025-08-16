@@ -28,7 +28,7 @@
        <!-- Navigation -->
     <nav class="fixed w-full top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
+            <div class="flex justify-between items-center h-16 rr">
                 <div class="flex-shrink-0">
                     <a href="index.html" class="text-2xl font-bold text-primary">DigitalPro</a>
                 </div>
@@ -115,12 +115,6 @@
     <section class="py-12 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-center items-center mb-12">
-                <span class="text-gray-600 mr-4">Monthly</span>
-                <button id="pricingToggle" class="relative inline-flex h-6 w-11 items-center rounded-full bg-gray-200 transition-colors focus:outline-none">
-                    <span id="toggleDot" class="inline-block h-4 w-4 transform rounded-full bg-white transition-transform translate-x-1"></span>
-                </button>
-                <span class="text-gray-600 ml-4">Yearly</span>
-                <span class="bg-secondary text-white text-xs px-2 py-1 rounded-full ml-2">Save 20%</span>
             </div>
         </div>
     </section>
@@ -145,12 +139,6 @@
                                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                                 </svg>
                                 <span class="text-gray-600">Basic SEO Optimization</span>
-                            </li>
-                            <li class="flex items-center">
-                                <svg class="w-5 h-5 text-secondary mr-3" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                                </svg>
-                                <span class="text-gray-600">Social Media Management (2 platforms)</span>
                             </li>
                             <li class="flex items-center">
                                 <svg class="w-5 h-5 text-secondary mr-3" fill="currentColor" viewBox="0 0 20 20">
@@ -197,12 +185,6 @@
                                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                                 </svg>
                                 <span class="text-gray-600">Advanced SEO + Content Marketing</span>
-                            </li>
-                            <li class="flex items-center">
-                                <svg class="w-5 h-5 text-secondary mr-3" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                                </svg>
-                                <span class="text-gray-600">Social Media Management (4 platforms)</span>
                             </li>
                             <li class="flex items-center">
                                 <svg class="w-5 h-5 text-secondary mr-3" fill="currentColor" viewBox="0 0 20 20">
@@ -264,12 +246,6 @@
                                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                                 </svg>
                                 <span class="text-gray-600">Advanced PPC + Retargeting</span>
-                            </li>
-                            <li class="flex items-center">
-                                <svg class="w-5 h-5 text-secondary mr-3" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                                </svg>
-                                <span class="text-gray-600">Weekly Reports + Real-time Dashboard</span>
                             </li>
                             <li class="flex items-center">
                                 <svg class="w-5 h-5 text-secondary mr-3" fill="currentColor" viewBox="0 0 20 20">
@@ -417,12 +393,13 @@
             const isYearly = toggle.classList.contains('bg-primary');
             
             if (isYearly) {
+                // Switch to monthly
                 toggle.classList.remove('bg-primary');
                 toggle.classList.add('bg-gray-200');
                 dot.classList.remove('translate-x-6');
                 dot.classList.add('translate-x-1');
                 
-                // Switch to monthly prices
+                // Update prices to monthly
                 document.getElementById('starterPrice').textContent = '$599';
                 document.getElementById('starterPeriod').textContent = '/month';
                 document.getElementById('professionalPrice').textContent = '$1,199';
@@ -430,12 +407,13 @@
                 document.getElementById('enterprisePrice').textContent = '$2,499';
                 document.getElementById('enterprisePeriod').textContent = '/month';
             } else {
+                // Switch to yearly
                 toggle.classList.add('bg-primary');
                 toggle.classList.remove('bg-gray-200');
                 dot.classList.add('translate-x-6');
                 dot.classList.remove('translate-x-1');
                 
-                // Switch to yearly prices (20% discount)
+                // Update prices to yearly (20% discount)
                 document.getElementById('starterPrice').textContent = '$5,750';
                 document.getElementById('starterPeriod').textContent = '/year';
                 document.getElementById('professionalPrice').textContent = '$11,510';
